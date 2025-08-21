@@ -22,7 +22,7 @@ export const Header= ({insideLanding}) => {
     <div>
         <div className="navbar bg-white/50 backdrop-blur-sm shadow-sm  justify-between px-2 fixed z-100">
   <div className="flex w-100 ">
-    <img src="https://i.pinimg.com/736x/f8/ef/6e/f8ef6eae1975fc7ba18b6862f191b05d.jpg" alt="" className='w-[180px] object-cover h-16 '  />
+    <img src="/headerLogo.png" alt="" className='w-[180px] object-cover h-16 '  />
   </div>
   {insideLanding && <div className="searchfields  w-full flex justify-end ">
     <input type="text" className='w-39 sm:w-[100%] border-2 rounded-2xl border-gray-300 px-3 p-1 ' placeholder='Search Here...' onChange={(e)=>handleChange(e)} />
@@ -36,24 +36,24 @@ export const Header= ({insideLanding}) => {
       <ul
         tabIndex={0}
         className="menu menu-sm  dropdown-content bg-base-100 rounded-box z-1 mt-4 -ms-25 w-40 p-2 shadow">
-        <li><a href="">
+        <li><Link to={'/whishlist'}>
         <div className="indicator ">
         <i className="fa-solid fa-heart text-xl hover:text-red-600"></i> 
               <span className="badge w-4 h-4  indicator-item text-[10px] p-2 border-none bg-green-700 text-white">{count}</span>
         </div>
         <span className='mx-2'>Whishlist</span>
-        </a></li>
+        </Link></li>
         <li>
-          <a href="">
+          <Link to={'/cart'}>
           <div className="indicator ">
         <i className="fa-solid fa-cart-shopping text-xl hover:text-green-800"></i>
-              <span className="badge w-4 h-4  indicator-item text-[10px] p-2 border-none bg-red-700 text-white">{count}</span>
+              <span className="badge w-4 h-4  indicator-item text-[10px] p-2 border-none bg-red-700 text-white">{cartcount}</span>
         </div>
         <span className='mx-2'>Cart</span>
-          </a>
+          </Link>
           
         </li>
-        <li><a href="">Logout</a></li>
+        
       </ul>
     </div>
 
